@@ -1,34 +1,32 @@
+const nombre = document.getElementById("nombre")
+const apellidos = document.getElementById("apellidos")
+const correo = document.getElementById("correo")
+const mensaje = document.getElementById("mensaje")
+const form = document.getElementById("form")
+const parrafo = document.getElementById("warning")
 
-function validar() {
+form.addEventListener("click", validar)
 
-        var nombre, apellidos, correo, mensaje, expresion;
+function validar(e){
+        let warning = ""
+        let regexEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
+        let entrar = false      // si el if entra en true muestra el mensaje de error
+        parrafo.innerHTML = ""  // reiniciamos el formulario
 
-        nombre = document.getElementById("nombre").value;
-        apellidos = document.getElementById("apellidos").value;
-        correo = document.getElementById("correo").value;
-        mensaje = document.getElementById("mensaje").value;
-
-        expresion = /\w+@\w+\.+[a-z]/
-
-
-        if (nombre === "" || apellidos === "" || correo === "" || mensaje === "") {
-                alert("los campos estan vacios")
-                return false
+        if(nombre.value.length < 2 || apellidos.value.length < 2){
+                warning += `el nombre o apellido es muy corto <br>`
+                entrar = true
         }
-        else if (nombre.length > 25 || apellidos.length > 25) {
-                alert("los nombres y apellidos no deben tener mas de 255 caracteres")
-                return false
+        if(!regexEmail.test(correo.value)){
+                warning += `el email no es valido <br>`
+                entrar = true
         }
-        else if (correo.length > 50) {
-                alert("el correo esta muy largo")
-                return false
+        if(mensaje.value.length < 30){
+                warning += `el mensaje debe contener al menos 30 caracteres <br>`
+                entrar = true
         }
-        else if (!expresiones.test(correo)) {
-                alert("correro no valido")
-                return false
-        }
-        else if (mensaje.length < 30) {
-                alert("el mensaje debe ser mayor a 30 caracteres")
-                return false
+        if(entrar){
+               parrafo.innerHTML = warning
+               e.preventDefault(e) 
         }
 }

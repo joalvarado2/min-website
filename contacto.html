@@ -20,27 +20,28 @@
     </header>
     <main class="container">
         <div>
-            <form action="enviar.php" method="POST" class="img"  onsubmit="return validar()">
+            <form action="#"  class="img" id="form">
                 <legend>Contactános llenando todos los campos</legend>
 
                 <div class="contenedor-campos">
                     <div class="campo w-100">
-                        <label>Nombre</label>
-                        <input id="nombre" type="text" name="nombre" placeholder="Nombre" required>
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" type="text" name="nombre" placeholder="Nombre" >
                     </div>
                     <div class="campo w-100">
-                        <label>Apellidos</label>
-                        <input id="apellidos" type="text" name="apellidos" placeholder="Apellidos" required>
+                        <label for="apellidos">Apellidos</label>
+                        <input id="apellidos" type="text" name="apellidos" placeholder="Apellidos" >
                     </div>
                     <div class="campo w-100">
-                        <label>Correo</label>
-                        <input id="correo" type="email" name="email" placeholder="maria123@example.com" required>
+                        <label for="correo">Correo</label>
+                        <input id="correo" type="email" name="email" placeholder="maria123@example.com" >
                     </div>
                     <div class="campo w-100">
-                        <label>Mensaje</label>
-                        <textarea id="mensaje" name="mensaje" placeholder="escribe tu mensaje mayor a 30 caracteres" required></textarea>
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="escribe tu mensaje mayor a 30 caracteres" ></textarea>
                     </div>
                 </div> <!-- contenedor-campos -->
+                <span class="warnings" id="warning"></span>
 
                 <div class="enviar">
                     <input type="submit" class="btn" value="enviar">
