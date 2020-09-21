@@ -28,9 +28,11 @@ a{
     margin: 2rem;
     font-size: 2rem;
     text-decoration: none;
-    color: white;
     display: block;
     text-align: center;
+}
+.color{
+    color: white;
 }
 .site-header::after{
     content:'';
@@ -55,6 +57,7 @@ h1{
 p{
     font-size: 2rem;
     line-height: 3rem;
+    letter-spacing: 1px;
 }
 .contenido p{
     line-height: 4rem;
@@ -163,6 +166,7 @@ form legend{
 }
 .w-100{
     flex: 0 0 100%;
+    font-size: 2rem;
 }
 .enviar{
     display: flex;

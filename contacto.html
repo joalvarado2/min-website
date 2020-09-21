@@ -6,35 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/index.css">
     <link rel="stylesheet" href="/styles/normalize.css">
-    <title>Document</title>
+    <title>Min-Website</title>
 </head>
 
 <body>
     <header class="site-header">
         <nav>
-            <a href="index.html">Inicio</a>
-            <a href="galeria.html">Galeria</a>
-            <a href="video.html">Video & Audio</a>
-            <a href="contacto.html">Contacto</a>
+            <a href="index.html" id="inicio" class="color">Inicio</a>
+            <a href="galeria.html" class="color">Galeria</a>
+            <a href="video.html" class="color">Video & Audio</a>
+            <a href="contacto.html" class="color">Contacto</a>
         </nav>
     </header>
     <main class="container">
         <div>
-            <form action="" class="img">
+            <form action="enviar.php" method="POST" class="img"  onsubmit="return validar()">
                 <legend>Contactános llenando todos los campos</legend>
 
                 <div class="contenedor-campos">
                     <div class="campo w-100">
                         <label>Nombre</label>
-                        <input type="text" name="nombre" placeholder="Nombre">
+                        <input id="nombre" type="text" name="nombre" placeholder="Nombre" required>
+                    </div>
+                    <div class="campo w-100">
+                        <label>Apellidos</label>
+                        <input id="apellidos" type="text" name="apellidos" placeholder="Apellidos" required>
                     </div>
                     <div class="campo w-100">
                         <label>Correo</label>
-                        <input type="email" name="nombre" placeholder="maria123@example.com">
+                        <input id="correo" type="email" name="email" placeholder="maria123@example.com" required>
                     </div>
                     <div class="campo w-100">
                         <label>Mensaje</label>
-                        <textarea></textarea>
+                        <textarea id="mensaje" name="mensaje" placeholder="escribe tu mensaje mayor a 30 caracteres" required></textarea>
                     </div>
                 </div> <!-- contenedor-campos -->
 
@@ -44,10 +48,10 @@
             </form>
         </div>
         <div class="botones">
-            <button class="btn">regresar</button>
-            <button class="btn">continuar</button>
+            <a href="video.html" class="btn">Regresar</a>
         </div>
     </main>
+    <script src="/scripts/index.js"></script>
 </body>
 
 </html>
